@@ -11,6 +11,7 @@ function App() {
       <div className="p-4">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus veritatis corrupti libero praesentium laudantium ducimus veniam magni sint tempore inventore numquam, totam repellat est eum eos facere. Non, animi reiciendis.</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus veritatis corrupti libero praesentium laudantium ducimus veniam magni sint tempore inventore numquam, totam repellat est eum eos facere. Non, animi reiciendis.</p>
+        <a href="#">Enlace</a>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus veritatis corrupti libero praesentium laudantium ducimus veniam magni sint tempore inventore numquam, totam repellat est eum eos facere. Non, animi reiciendis.</p>
       </div>
     </main>

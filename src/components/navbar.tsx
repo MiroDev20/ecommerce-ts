@@ -13,6 +13,7 @@ export const Navbar = () => {
                     top-0
                     h-screen
                     absolute
+                    pointer-events-none
                 `}
             >
             </div>
