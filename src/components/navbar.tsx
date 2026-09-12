@@ -1,53 +1,68 @@
+import { useState } from 'react'
+import { IconClose } from './icons/icon-close.tsx'
+
 export const Navbar = () => {
+    const [isOpen, setIsOpen] = useState<boolean>(false)
+
     return (
-        <div className="
-                absolute
-                w-full
-                h-screen
-                bg-black/30
-                
-            "
-        >
-            <nav className="
-                    flex
-                    flex-col
-                    p-4
-                    gap-8
-                    w-50
+            <div className={`
+                    ${isOpen ? 'bg-black/30' : 'bg-black/0'}
+                    absolute
+                    w-full
                     h-screen
-                    bg-white
-                "
+                `}
             >
-                <img className="
-                        w-3
-                    "
-                    src="./src/assets/icons/icon-close.svg"
-                    alt="close navbar"
-                />
-                <ul className="
-                        flex
-                        flex-col
-                        gap-4
-                        font-bold
-                    "
-                >
-                    <li>
-                        <a href="#">Collections</a>
-                    </li>
-                    <li>
-                        <a href="#">Men</a>
-                    </li>
-                    <li>
-                        <a href="#">Women</a>
-                    </li>
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
-            </nav>
+        {
+            isOpen ? (
+                    <nav className="
+                            flex
+                            flex-col
+                            p-4
+                            gap-8
+                            w-50
+                            h-screen
+                            bg-white
+                        "
+                    >
+                        <IconClose onClick={() => {setIsOpen(false)}}/>
+                        <ul className="
+                                flex
+                                flex-col
+                                gap-4
+                                font-bold
+                                text-lg
+                                text-very-dark-blue
+                            "
+                        >
+                            <li>
+                                <a href="#">Collections</a>
+                            </li>
+                            <li>
+                                <a href="#">Men</a>
+                            </li>
+                            <li>
+                                <a href="#">Women</a>
+                            </li>
+                            <li>
+                                <a href="#">About</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                ) : (
+                    <img
+                        className="
+                            w-3
+                            cursor-pointer
+                        "
+                        onClick={() => setIsOpen(true)}
+                        src="./src/assets/icons/icon-menu.svg"
+                        alt="menu icon"
+                    />
+                )
+            }
         </div>
     )
 }
