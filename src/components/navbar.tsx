@@ -5,64 +5,74 @@ export const Navbar = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false)
 
     return (
+        <>
             <div className={`
                     ${isOpen ? 'bg-black/30' : 'bg-black/0'}
-                    absolute
                     w-full
+                    p-4
+                    top-0
                     h-screen
+                    absolute
                 `}
             >
-        {
-            isOpen ? (
-                    <nav className="
-                            flex
-                            flex-col
-                            p-4
-                            gap-8
-                            w-50
-                            h-screen
-                            bg-white
-                        "
-                    >
-                        <IconClose onClick={() => {setIsOpen(false)}}/>
-                        <ul className="
+            </div>
+
+        <div className='p-4'>
+            {
+                isOpen ? (
+                        <nav className="
+                                box-border
+                                absolute
                                 flex
                                 flex-col
-                                gap-4
-                                font-bold
-                                text-lg
-                                text-very-dark-blue
+                                p-4
+                                gap-8
+                                w-50
+                                h-screen
+                                bg-white
                             "
                         >
-                            <li>
-                                <a href="#">Collections</a>
-                            </li>
-                            <li>
-                                <a href="#">Men</a>
-                            </li>
-                            <li>
-                                <a href="#">Women</a>
-                            </li>
-                            <li>
-                                <a href="#">About</a>
-                            </li>
-                            <li>
-                                <a href="#">Contact</a>
-                            </li>
-                        </ul>
-                    </nav>
-                ) : (
-                    <img
-                        className="
-                            w-3
-                            cursor-pointer
-                        "
-                        onClick={() => setIsOpen(true)}
-                        src="./src/assets/icons/icon-menu.svg"
-                        alt="menu icon"
-                    />
-                )
-            }
+                            <IconClose onClick={() => {setIsOpen(false)}}/>
+                            <ul className="
+                                    flex
+                                    flex-col
+                                    gap-4
+                                    font-bold
+                                    text-lg
+                                    text-very-dark-blue
+                                "
+                            >
+                                <li>
+                                    <a href="#">Collections</a>
+                                </li>
+                                <li>
+                                    <a href="#">Men</a>
+                                </li>
+                                <li>
+                                    <a href="#">Women</a>
+                                </li>
+                                <li>
+                                    <a href="#">About</a>
+                                </li>
+                                <li>
+                                    <a href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    ) : (
+                        <img
+                            className="
+                                w-3
+                                cursor-pointer
+                                absolute
+                            "
+                            onClick={() => setIsOpen(true)}
+                            src="./src/assets/icons/icon-menu.svg"
+                            alt="menu icon"
+                        />
+                    )
+                }
         </div>
+        </>
     )
 }
